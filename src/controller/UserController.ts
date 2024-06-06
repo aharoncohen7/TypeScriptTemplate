@@ -10,7 +10,7 @@ class UserController implements IController<IUser> {
         return user
     }
     read(filter: FilterQuery<IUser>): IUser[] {
-        
+    
         throw new Error('Method not implemented.')
     }
     async readOne(filter: FilterQuery<IUser>): Promise<IUser | null> {

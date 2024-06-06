@@ -5,9 +5,11 @@ const router = Router()
 
 // CRUD : all users, signle user, create user, update user
 router.get('/',async (req : Request, res: Response)=>{
+    console.log("tytryrty");
+    
     try{
-        res.send(UserService.getAllUsers())
-        // res.send(new UserService().getAllUsers())
+        const all = UserService.getAllUsers()
+        res.send(all)
     }
     catch(err){
         res.status(400).send(err)
@@ -15,6 +17,8 @@ router.get('/',async (req : Request, res: Response)=>{
 })
 
 router.post('/',async (req : Request, res: Response)=>{
+   
+    
     try{
         let newBody = Mapper<CreateNewUserRequest>(new CreateNewUserRequest(),req.body)
 

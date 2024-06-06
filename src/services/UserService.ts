@@ -1,14 +1,16 @@
 import { SaveOptions, Document } from "mongoose";
 import UserController from "../controller/UserController";
 import IUser from "../interfaces/IUser";
+import users from "../data"
 
 class UserService {
 
     private static controller: UserController = new UserController()
 
-
     static getAllUsers() {
-        // return users;
+    console.log(users);
+    
+        return users;
     }
 
     static async getSingleUser(email: string) {
